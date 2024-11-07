@@ -1,0 +1,97 @@
+.book-container {
+  justify-content: center;
+  background-color: rgba(247, 247, 233, 0.901);
+  max-width: 1000%;
+  margin: 0 auto;
+  padding: 0;
+  height: 80vh;
+  box-sizing:border-box;
+  text-align: center;
+}
+
+.book {
+  text-align: left;
+  width: 80%;
+}
+
+.book p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.isbn {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.thumbnail {
+  width: 20%;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote {
+  text-align: left;
+  font-style: italic;
+  border-left: 3px solid red;
+  padding-left: 8px;
+}
+
+.reviewer {
+  font-weight: bold;
+  color: red;
+}
+
+.book {
+  margin: 50px 0;
+}
+
+.purchase-links {
+  display: grid;
+  width:1000px;
+  grid-template-areas:
+  "paperback hardcover e-book";
+  justify-content: space-around;
+  align-items: top;
+  
+}
+
+.purchase-links .e-book {
+  display: flex;
+  flex-direction: column;
+} 
+
+.purchase-links .paperback {
+  display: flex;
+  flex-direction: column;
+}
+
+.purchase-links .hardcover {
+  display: flex;
+  flex-direction: column;
+} 
+
+.purchase-links img {
+  background-color: #f2eefa;
+  border-radius: 5px;
+  padding: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .thumbnail:hover {
+    width:500px; 
+    height:auto;
+    cursor: zoom-in;
+    transition: 50ms;
+  }
+  .purchase-links {
+    grid-template-areas:
+    "paperback hardcover e-book";
+    width: 1000px;
+  }
+  .book {
+    width:1000px;
+  }  
+}

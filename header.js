@@ -1,11 +1,16 @@
-var headerHTML = `<div>
+var headerHTML = `
 <header class="header">
   <a class="navlink brand" href="index.html">Katrina<br>&nbsp &nbsp &nbsp McKee</a>
-  <a class="navlink" href="books.html">Books</a>
+   <div class="dropdown">
+        <button class="dropbtn">Books</button>
+        <div class="dropdown-content">
+            <a class="navlink" href="portal.html">Portal</a>
+            <a class="navlink" href="illina.html">Illina</a>
+        </div>
+    </div>
   <a class="navlink" href="about.html">About</a>
   <a class="navlink" href="contact.html">Contact</a>
   <a class="navlink" href="news.html">News</a>
 </header>
-</div>
 `
 document.body.insertAdjacentHTML("beforebegin", headerHTML);
