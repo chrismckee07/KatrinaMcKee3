@@ -7,7 +7,7 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  background-color: rgba(247, 247, 233, 0.901);
+  background-color: white;
   max-width: 1000%;
   margin: 0 auto;
   padding: 0;

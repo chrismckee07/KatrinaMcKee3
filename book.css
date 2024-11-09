@@ -1,12 +1,15 @@
 .book-container {
+  display: flex;
   justify-content: center;
-  background-color: rgba(247, 247, 233, 0.901);
-  max-width: 1000%;
+  background-color: white;
   margin: 0 auto;
   padding: 0;
   height: 80vh;
+  width: 80%;
   box-sizing:border-box;
   text-align: center;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .book {
