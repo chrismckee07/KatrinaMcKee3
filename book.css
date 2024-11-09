@@ -1,20 +1,28 @@
 .book-container {
-  display: flex;
+  display: block;
+  flex-direction: column;
   justify-content: center;
   background-color: white;
   margin: 0 auto;
   padding: 0;
   height: 80vh;
-  width: 80%;
+  max-width: 1010px;
   box-sizing:border-box;
   text-align: center;
   flex-direction: column;
   overflow-y: auto;
+  border-top: white;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+h1 {
+  font-family: "Orbitron", sans-serif;
 }
 
 .book {
   text-align: left;
-  width: 80%;
+  margin: auto;
+  padding: auto;
 }
 
 .book p {
@@ -23,6 +31,7 @@
 }
 
 .isbn {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.1rem;
   line-height: 1.5;
   font-weight: bold;
@@ -53,7 +62,7 @@ blockquote {
 
 .purchase-links {
   display: grid;
-  width:1000px;
+  /* width:1000px; */
   grid-template-areas:
   "paperback hardcover e-book";
   justify-content: space-around;
@@ -82,19 +91,3 @@ blockquote {
   padding: 0;
 }
 
-@media only screen and (min-width: 1000px) {
-  .thumbnail:hover {
-    width:500px; 
-    height:auto;
-    cursor: zoom-in;
-    transition: 50ms;
-  }
-  .purchase-links {
-    grid-template-areas:
-    "paperback hardcover e-book";
-    width: 1000px;
-  }
-  .book {
-    width:1000px;
-  }  
-}
