@@ -1,0 +1,21 @@
+.about-container {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+.about-container p {
+  text-align: left;
+}
+
+.about-container .katrinaImg {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1000px) {
+  .about-container {
+    width: 1000px;
+  }
+}
