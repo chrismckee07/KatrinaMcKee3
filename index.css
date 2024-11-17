@@ -42,7 +42,7 @@ body {
 }
 
 .header .brand {
-  font-family: Whisper, serif;
+  font-family: Whisper, cursive;
   font-size: 3rem;
 }
 
@@ -173,5 +173,11 @@ header {
   display: block;
   margin: auto auto;
 }
+
+/* @media only screen and (min-width: 1000px) {
+  .footer {
+    width: 85%;
+  }
+} */
   
 
