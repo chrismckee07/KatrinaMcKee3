@@ -1,7 +1,10 @@
 .about-container {
   margin: 0;
-  padding: 0;
   width: 80%;
+}
+
+.about-container p {
+  padding: 0 1em;
 }
 
 .about-container p {
