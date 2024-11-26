@@ -5,6 +5,7 @@ var headerHTML = `
         <button class="dropbtn">Books</button>
         <div class="dropdown-content">
             <a class="navlink" href="portal.html">Portal</a>
+            <a class="navlink" href="illina.html">Illina</a>
         </div>
     </div>
   <a class="navlink" href="about.html">About</a>

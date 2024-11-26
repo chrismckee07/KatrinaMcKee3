@@ -2,13 +2,15 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(#0E1935, #293A65);
+
+
 }
 
 .container {
   display: flex;
   justify-content: center;
   background-color: white;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
   height: 80vh;
@@ -21,15 +23,15 @@ body {
 
 .header {
   display: flex;
-  background: linear-gradient(#0E1935, #293A65);
+  background: linear-gradient(#0f1937, #141f3f);
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   padding: 0 auto;
-  color: lightgrey;
+  color: rgb(130, 126, 126);
   height: 15vh;
   padding: 0;
-  max-width: 1000px;
+  max-width: 50%;
 }
 
 .header .header-container {
@@ -115,7 +117,7 @@ body {
 }
 
 .footer {
-  background-color: black;
+  background: linear-gradient(#293865, #2a3a68);
   color: white;
   text-align: center;
   margin: 0 auto;
@@ -125,7 +127,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
+  max-width: 50%;
   height: 5vh;
 }
 
@@ -136,10 +138,13 @@ body {
 }
 
 .footer .copyright-text {
-  font-weight: 100;
-  font-size: 12px;
-  margin-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: .7rem;
+  margin-top: 30px;
+  padding: 0;
 }
+
 
 .footer .socialLink {
   display: inline-block; 
@@ -166,7 +171,7 @@ body {
 }
 
 .home-screen-content img {
-  height: 99999px;
+  /* height: 99999px; */
   object-fit:contain;
   max-height: 100%;
   max-width: 100%;    

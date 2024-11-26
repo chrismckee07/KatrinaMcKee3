@@ -7,7 +7,8 @@ var footerItems = `
       <li class="socialLink"><a href="https://www.tumblr.com/katrinamckee03"><img src="./images/tumblr_icon.png" alt="Tumblr Link"></a></li>
       <li class="socialLink"><a href="https://katrinamckee03.substack.com/"><img src="./images/substack.png" alt="Substack Link"></a></li>
       <li class="socialLink"><a href="https://www.threads.net/@katrinakmckee"><img src="./images/Threads-Logo.png" alt="Substack Link"></a></li>
-      <li class="socialLink"><a href="katrinamckee03.bsky.social"><img src="./images/Bluesky_Logo.png" alt="Bluesky Link"></a></li>
+      <li class="socialLink"><a href="https://www.katrinamckee03.bsky.social"><img src="./images/Bluesky_Logo.png" alt="Bluesky Link"></a></li>
+      <li class="socialLink"><a href=mailto:katrinamckee03@gmail.com”><img src="./images/mail_icon.png" alt="email link"></a></li>
     </ul>
   </div>
   <div class="copyright-text">
