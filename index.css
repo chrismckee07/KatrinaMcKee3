@@ -2,8 +2,6 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(#0E1935, #293A65);
-
-
 }
 
 .container {
@@ -55,6 +53,13 @@ body {
 .header .brand {
   font-family: Whisper, cursive;
   font-size: 3rem;
+}
+
+.header .short-brand {
+  font-family: Whisper, cursive;
+  font-size: 2rem;
+  display: none;
+  visibility: hidden;
 }
 
 .header ul {
@@ -150,8 +155,8 @@ body {
   display: inline-block; 
   list-style-type: none;
   list-style-position: inside;
-  margin: 0 20px;
-  padding: 0 20px; 
+  margin: 0 10px;
+  padding: 0 10px; 
   text-decoration: none;
 }
 
@@ -171,18 +176,57 @@ body {
 }
 
 .home-screen-content img {
-  /* height: 99999px; */
-  object-fit:contain;
-  max-height: 100%;
+  object-fit: contain;
   max-width: 100%;    
-  display: block;
+  display: flex;
   margin: auto auto;
+  align-items: center;
 }
 
-/* @media only screen and (min-width: 1000px) {
-  .footer {
-    width: 85%;
+@media only screen and (min-width: 1378px) {
+  .header {
+    max-width: 50%;
   }
-} */
-  
+  .footer {
+    max-width: 50%;
+  }
+}
 
+@media only screen and (max-width: 1377px) {
+  .header {
+    max-width: 80%;
+  }
+  .footer {
+    max-width: 80%;
+  }
+}
+  
+@media only screen and (max-width: 1300px) {
+  .header {
+    max-width: 100%;
+  }
+  .footer {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .footer .socialLink {
+    margin: 0 5px;
+    padding: 0 5px; 
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .footer .socialLink {
+    margin: 0 5px;
+    padding: 0 5px; 
+  }
+  .header .brand {
+    display: none;
+    visibility: hidden;
+  }
+  .header .short-brand {
+    visibility: visible;
+  }
+}

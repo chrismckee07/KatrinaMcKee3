@@ -1,6 +1,7 @@
 .about-container {
   margin: 0;
   width: 80%;
+  overflow-y: auto;
 }
 
 .about-container p {
@@ -17,8 +18,7 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1378px) {
   .about-container {
-    width: 1000px;
   }
 }
