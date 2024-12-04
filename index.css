@@ -210,17 +210,27 @@ body {
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 707px) {
   .footer .socialLink {
-    margin: 0 5px;
-    padding: 0 5px; 
+    margin: 0 2px;
+    padding: 0 2px; 
+  }
+  .header .brand {
+    display: none;
+    visibility: hidden;
+  }
+  .header .short-brand {
+    visibility: visible;
+  }
+  .header .navlink, .header .dropdown .dropbtn {
+    padding: 0;
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 412px) {
   .footer .socialLink {
-    margin: 0 5px;
-    padding: 0 5px; 
+    margin: 0;
+    padding: 0; 
   }
   .header .brand {
     display: none;
