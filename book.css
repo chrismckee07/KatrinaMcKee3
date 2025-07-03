@@ -86,6 +86,8 @@ blockquote {
 } 
 
 .purchase-links img {
+  width: 140px;
+  height: 84px;
   background-color: #f2eefa;
   border-radius: 5px;
   padding: 0;
