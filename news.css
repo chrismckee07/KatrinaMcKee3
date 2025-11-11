@@ -21,6 +21,44 @@
   margin: 0 0;
 }
 
+.news-content h4, p {
+  margin: 20px;
+  padding: 5px;
+}
+
+.news-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* Make header clickable-looking */
+.news-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* space for arrow on the right */
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* Arrow after the h3 text */
+.news-header::after {
+  content: "▼";           /* closed arrow */
+  font-size: 0.8em;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+/* Hide content when collapsed */
+.news-item.collapsed .news-content {
+  display: none;
+}
+
+/* Rotate arrow when collapsed (or expanded – your choice) */
+.news-item.collapsed .news-header::after {
+  transform: rotate(-90deg);  /* points sideways when closed */
+}
  
 @media only screen and (min-width: 1378px) {
   .news-container {

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News</title>
+
+  <style>
+    .news-item {
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer; /* show it's clickable */
+    }
+
+    .news-item h3,
+    .news-item h4 {
+      margin: 0.2rem 0;
+    }
+
+    /* hide content when collapsed */
+    .news-item.collapsed .news-content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="news-item">
+    <h3>The Stories in Objects</h3>
+    <h4>Oct 30, 2025</h4>
+
+    <div class="news-content">
+      <p><b>Every object has a story</b></p>
+      <p>I lost a ring yesterday.</p>
+      <p>More text here...</p>
+    </div>
+  </div>
+
+  <!-- Inline JS at the END of body -->
+  <script>
+    // no DOMContentLoaded needed because script is at the end
+    const items = document.querySelectorAll('.news-item');
+
+    items.forEach(function (item) {
+      // start collapsed:
+      item.classList.add('collapsed');
+
+      // toggle when the whole item is clicked
+      item.addEventListener('click', function () {
+        item.classList.toggle('collapsed');
+      });
+    });
+  </script>
+</body>
+</html>
