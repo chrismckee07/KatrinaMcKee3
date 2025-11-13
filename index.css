@@ -170,7 +170,8 @@ body {
 }
 
 .home-screen-content {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
 }
