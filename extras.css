@@ -10,16 +10,13 @@ h3 {
 
 .extras-container p {
   padding: 0 1em;
-}
-
-.extras-container p {
   text-align: left;
 }
 
 .extras-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+  grid-template-columns: repeat(1, 1fr); /* 1 columns */
+  grid-template-rows: repeat(1, 1fr);    /* 1 rows */
   gap: 10px; /* optional spacing */
   place-items: center;
 }
