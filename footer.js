@@ -14,7 +14,7 @@ var footerItems = `
     </ul>
   </div>
   <div class="copyright-text">
-    <p>Copyright © 2024 - 2025</p>  
+    <p>Copyright © 2024 - 2026</p>  
   </div>
 </footer>
 `
