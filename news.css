@@ -9,11 +9,11 @@
   font-family: Whisper, cursive;
   font-size: 3rem;
   border-radius: 5px;
-  /* border: 1px solid black; */
   box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
   background-color: whitesmoke;
   color: rgb(96, 60, 151);
-  text-shadow: 4px 4px 8px pink;
+  text-shadow: 4px 4px 8px pink; 
+  padding: 10px;
 }
 
 .news-container h3:hover {
