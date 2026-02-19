@@ -1,6 +1,6 @@
 var headerHTML = `
 <header class="header">
-  <a class="navlink brand" href="index.html">Katrina<br>&nbsp &nbsp &nbsp McKee</a>
+  <a class="navlink brand" href="index.html"><img src="images/TOSHIRO_BOOKS-04.png"></a>
   <a class="navlink short-brand" href="index.html">KM</a>
    <div class="dropdown">
         <button class="dropbtn">Books</button>
