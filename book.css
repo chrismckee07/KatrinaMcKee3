@@ -98,10 +98,12 @@ blockquote {
 .purchase-links {
   display: grid;
   /* width:1000px; */
-  grid-template-areas:
-  "paperback hardcover e-book";
-  justify-content: space-around;
-  align-items: top;
+     display: flex;
+     flex-direction: row;
+     gap: 2rem;
+     justify-content: center;
+     align-items: stretch;
+     margin-top: 2rem;
   
 }
 
