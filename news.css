@@ -39,6 +39,16 @@
   padding: 0;
 }
 
+.news-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 50%;
+  width: 50%;
+}
+
+
 /* Make header clickable-looking */
 .news-header {
   cursor: pointer;
