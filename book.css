@@ -122,12 +122,38 @@ blockquote {
   flex-direction: column;
 } 
 
-.purchase-links img {
+/* .purchase-links img {
   width: 140px;
   height: 84px;
   background-color: #f2eefa;
   border-radius: 5px;
   padding: 0;
+} */
+
+.purchase-icons a {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background: linear-gradient(90deg, #0E1935 0%, #293A65 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(14,25,53,0.15);
+  margin: 0.5em 0;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.03em;
+  text-shadow: 1px 2px 8px #1a223a99;
+}
+
+.purchase-icons :hover, .purchase-icons:focus {
+  background: linear-gradient(90deg, #293A65 0%, #0E1935 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(41,58,101,0.25);
+  outline: none;
 }
 
 @media only screen and (max-width: 640px) {
