@@ -1,56 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>News</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    .news-item {
-      border: 1px solid #ccc;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer; /* show it's clickable */
-    }
-
-    .news-item h3,
-    .news-item h4 {
-      margin: 0.2rem 0;
-    }
-
-    /* hide content when collapsed */
-    .news-item.collapsed .news-content {
-      display: none;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
   </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+  </style>
+  <meta property="og:title" content="Katrina McKee - News">
+  <meta property="og:description" content="Latest news and updates from Katrina McKee, Australian sci-fi and fantasy author.">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="https://katrinamckee.com.au/news.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="news-test.css">
+  <title>Katrina McKee - News</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <style>
+    /* Fixes: full-width header, tight spacing */
+    .news-header {
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+    .news-header h3 {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .news-item {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
+  <script src="./header.js"></script>
+  <div class="container">
+    <div class="news-container">
+      <h4>Subscribe to my substack to automatically receive updates straight to your inbox!</h4>
+      <iframe
+        src="https://katrinamckee03.substack.com/embed"
+        width="100%"
+        height="150"
+        style="border: none; background: transparent;"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
 
-  <div class="news-item">
-    <h3>The Stories in Objects</h3>
-    <h4>Oct 30, 2025</h4>
-
-    <div class="news-content">
-      <p><b>Every object has a story</b></p>
-      <p>I lost a ring yesterday.</p>
-      <p>More text here...</p>
+      <div id="substack-posts">Loading posts...</div>
+      <div class="pagination" id="pagination"></div>
     </div>
   </div>
-
-  <!-- Inline JS at the END of body -->
   <script>
-    // no DOMContentLoaded needed because script is at the end
-    const items = document.querySelectorAll('.news-item');
-
-    items.forEach(function (item) {
-      // start collapsed:
-      item.classList.add('collapsed');
-
-      // toggle when the whole item is clicked
-      item.addEventListener('click', function () {
-        item.classList.toggle('collapsed');
+    const SUBSTACK_URL = "https://katrinamckee03.substack.com/feed";
+    const RSS2JSON = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_URL)}&full_content=true`;
+    const POSTS_PER_PAGE = 6;
+ 
+    let allPosts = [];
+    let currentPage = 1;
+ 
+    async function loadPosts() {
+      const container = document.getElementById("substack-posts");
+ 
+      try {
+        const response = await fetch(RSS2JSON);
+        const data = await response.json();
+ 
+        if (!data.items || data.items.length === 0) {
+          container.innerHTML = "<p>No posts found.</p>";
+          return;
+        }
+ 
+        allPosts = data.items;
+        renderPage(currentPage);
+ 
+      } catch (error) {
+        container.innerHTML = "<p>Failed to load posts. Please try again later.</p>";
+        console.error("Error fetching Substack posts:", error);
+      }
+    }
+ 
+    function renderPage(page) {
+      const container = document.getElementById("substack-posts");
+      container.innerHTML = "";
+ 
+      const start = (page - 1) * POSTS_PER_PAGE;
+      const pagePosts = allPosts.slice(start, start + POSTS_PER_PAGE);
+ 
+      pagePosts.forEach(post => {
+        const date = new Date(post.pubDate).toLocaleDateString("en-AU", {
+          year: "numeric", month: "long", day: "numeric"
+        });
+ 
+        const content = post.content || post.description;
+ 
+        const item = document.createElement("div");
+        item.className = "news-item collapsed";
+ 
+        item.innerHTML = `
+          <div class="news-header" onclick="togglePost(this)">
+            <h3>${post.title}</h3>
+          </div>
+          <div class="news-content">
+            <h4>${date}</h4>
+            <div class="post-content">${content}</div>
+          </div>
+        `;
+ 
+        container.appendChild(item);
       });
-    });
+ 
+      renderPagination();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+ 
+    function togglePost(header) {
+      const item = header.closest(".news-item");
+      item.classList.toggle("collapsed");
+    }
+ 
+    function renderPagination() {
+      const pagination = document.getElementById("pagination");
+      pagination.innerHTML = "";
+      const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+ 
+      if (totalPages <= 1) return;
+ 
+      const prev = document.createElement("button");
+      prev.textContent = "← Prev";
+      prev.disabled = currentPage === 1;
+      prev.onclick = () => { currentPage--; renderPage(currentPage); };
+      pagination.appendChild(prev);
+ 
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        if (i === currentPage) btn.classList.add("active");
+        btn.onclick = () => { currentPage = i; renderPage(currentPage); };
+        pagination.appendChild(btn);
+      }
+ 
+      const next = document.createElement("button");
+      next.textContent = "Next →";
+      next.disabled = currentPage === totalPages;
+      next.onclick = () => { currentPage++; renderPage(currentPage); };
+      pagination.appendChild(next);
+    }
+ 
+    loadPosts();
   </script>
 </body>
+<script src="./footer.js"></script>
 </html>
