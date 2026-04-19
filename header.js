@@ -10,6 +10,7 @@ var headerHTML = `
     </div>
   <a class="navlink" href="about.html">About</a>
   <a class="navlink" href="news.html">News</a>
+
   <a class="navlink" href="extras.html">Extras</a>
 </header>
 `
