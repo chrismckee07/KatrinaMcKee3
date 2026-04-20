@@ -49,11 +49,11 @@ textarea {
 }
 
 textarea {
-  min-height: 140px;
+  min-height: 200px;
   resize: vertical;
 }
 
-submit-button {
+.submit-button {
   display: inline-block;
   padding: 0.75em 1.5em;
   background: linear-gradient(90deg, #0E1935 0%, #293A65 100%);
@@ -71,7 +71,7 @@ submit-button {
   text-shadow: 1px 2px 8px #1a223a99;
 }
 
-submit-button:hover {
+.submit-button:hover {
   background: linear-gradient(90deg, #293A65 0%, #0E1935 100%);
   color: #fff;
   transform: translateY(-2px) scale(1.04);
