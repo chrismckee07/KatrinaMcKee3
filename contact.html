@@ -24,11 +24,10 @@
           Have a question, event inquiry, media request, or just want to say hello?
           Send me a message.
         </p>
-
         <form action="https://formspree.io/f/mojylrpg" method="POST">
           <div>
             <label for="name">Name</label>
-            <input type="text" id="fname" name="first_name" placeholder="FirstName LastName" required />
+            <input type="text" id="fname" name="first_name" placeholder="Optional" />
           </div>
           <div>
             <label for="email">Email</label>
@@ -36,16 +35,14 @@
           </div>
           <div>
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Subject" />
+            <input type="text" id="subject" name="subject" placeholder="Optional" />
           </div>
           <div>
             <label for="message">Message</label>
             <textarea id="message" name="message" required></textarea>
           </div>
-        
           <!-- Honeypot spam filter — keep this hidden -->
           <input type="text" name="_gotcha" style="display:none" />
-        
           <button class="submit-button" type="submit">Send message</button>
         </form>
       </section>
