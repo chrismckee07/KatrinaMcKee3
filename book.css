@@ -156,6 +156,13 @@ blockquote {
   outline: none;
 }
 
+.review-image {
+  width: 150px;
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 @media only screen and (max-width: 640px) {
   .book-container {
     width: 100%;
